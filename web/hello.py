@@ -3,8 +3,9 @@ def application(environ, start_response):
         headers = [
             ('Content-Type', 'text/plain')
         ]
+        queryString = environ('QUERY_STRING').split('&')
         start_response(status, headers)
         body = ''
-        for i in queryStrig:
-            rbody += i + '\n'
+        for i in queryString:
+            body += i + '\n'
         return body
